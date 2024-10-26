@@ -5,40 +5,40 @@
   <form [formGroup]="businessForm" (ngSubmit)="onSubmit()" class="applyForm">
     <div class="form-group">
       <label>Company Name</label>
-      <input id="companyNameInput" formControlName="companyName" />
-      <div *ngIf="businessForm.get('companyName')?.invalid && businessForm.get('companyName')?.touched">
+      <input id="companyNameInput" formControlName="name" />
+      <div *ngIf="businessForm.get('name')?.invalid && businessForm.get('name')?.touched">
         Company Name is required!
       </div>
     </div>
 
     <div class="form-group">
       <label>Owner Name</label>
-      <input id="ownerNameInput" formControlName="ownerName"/>
-      <div *ngIf="businessForm.get('ownerName')?.invalid && businessForm.get('ownerName')?.touched">
+      <input id="ownerNameInput" formControlName="owner"/>
+      <div *ngIf="businessForm.get('owner')?.invalid && businessForm.get('owner')?.touched">
         Owner Name is required!
       </div>
     </div>
 
     <div class="form-group">
       <label>Company Address</label>
-      <input id="companyAddressInput" formControlName="companyAddress" />
-      <div *ngIf="businessForm.get('companyAddress')?.invalid && businessForm.get('companyAddress')?.touched ">
+      <input id="companyAddressInput" formControlName="address" />
+      <div *ngIf="businessForm.get('address')?.invalid && businessForm.get('address')?.touched ">
         Company Address is required!
       </div>
     </div>
 
     <div class="form-group">
       <label>Company Description</label>
-      <input id="companyDescriptionInput" formControlName="companyDescription" />
-      <div *ngIf="businessForm.get('companyDescription')?.invalid && businessForm.get('companyDescription')?.touched">
+      <input id="companyDescriptionInput" formControlName="description" />
+      <div *ngIf="businessForm.get('description')?.invalid && businessForm.get('description')?.touched">
         Company Description is required!
       </div>
     </div>
 
     <div class="form-group">
       <label>Company Email</label>
-      <input id="companyEmailInput" formControlName="companyEmail" />
-      <div *ngIf="businessForm.get('companyEmail')?.invalid && businessForm.get('companyEmail')?.touched">
+      <input id="companyEmailInput" formControlName="email" />
+      <div *ngIf="businessForm.get('email')?.invalid && businessForm.get('email')?.touched">
         Company Email is required!
       </div>
     </div>
@@ -53,8 +53,8 @@
 
     <div class="form-group">
     <label>Company Start Date</label>
-    <input id="companyStartDateInput" formControlName="companyStartDate" />
-    <div *ngIf="businessForm.get('companyStartDate')?.invalid && businessForm.get('companyStartDate')?.touched">
+    <input id="companyStartDateInput" formControlName="startDate" />
+    <div *ngIf="businessForm.get('startDate')?.invalid && businessForm.get('startDate')?.touched">
       Company Start Date is required!
     </div>
   </div>

@@ -17,20 +17,20 @@ export class FormpageComponent {
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.businessForm = this.fb.group({
-      companyName: ['', Validators.required],
-      ownerName: ['', Validators.required],
-      companyAddress: ['', Validators.required],
-      companyDescription: ['', Validators.required],
-      companyEmail: ['', Validators.required],
+      name: ['', Validators.required],
+      owner: ['', Validators.required],
+      address: ['', Validators.required],
+      description: ['', Validators.required],
+      email: ['', Validators.required],
       companyType: ['', Validators.required],
-      companyStartDate: ['', Validators.required],
+      startDate: ['', Validators.required],
     })
   }
 
   onSubmit() {
     if (this.businessForm.valid) {
       const formData = this.businessForm.value;
-      console.log('###\n' + formData)
+      console.log(formData)
       this.http.post('http://localhost:8080/api/company/create', formData).subscribe((response) => {
           console.log('Form Submitted', response);
         },
