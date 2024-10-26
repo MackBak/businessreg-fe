@@ -40,7 +40,6 @@ export class FormpageComponent {
     } else {
       console.error('Form not valid!')
     }
-
   }
 
 }
