@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './formpage.component.html',
   styleUrl: './formpage.component.css'
 })
+
 export class FormpageComponent {
 
 }
