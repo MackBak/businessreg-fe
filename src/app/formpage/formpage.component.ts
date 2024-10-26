@@ -1,12 +1,13 @@
 import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators, ReactiveFormsModule, Form} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
+import {CommonModule} from '@angular/common';
 
 
 @Component({
   selector: 'app-formpage',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './formpage.component.html',
   styleUrl: './formpage.component.css'
 })

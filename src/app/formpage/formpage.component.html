@@ -21,7 +21,7 @@
 
     <div class="form-group">
       <label>Company Address</label>
-      <input id="companyAddressInput" formControlName="companyAddress" />\
+      <input id="companyAddressInput" formControlName="companyAddress" />
       <div *ngIf="businessForm.get('companyAddress')?.invalid && businessForm.get('companyAddress')?.touched ">
         Company Address is required!
       </div>
@@ -51,7 +51,7 @@
       </div>
     </div>
 
-    <<div class="form-group">
+    <div class="form-group">
     <label>Company Start Date</label>
     <input id="companyStartDateInput" formControlName="companyStartDate" />
     <div *ngIf="businessForm.get('companyStartDate')?.invalid && businessForm.get('companyStartDate')?.touched">
