@@ -53,12 +53,11 @@
 
     <div class="form-group">
     <label>Company Start Date</label>
-    <input id="companyStartDateInput" formControlName="startDate" />
+    <input id="companyStartDateInput" formControlName="startDate" type="date"/>
     <div *ngIf="businessForm.get('startDate')?.invalid && businessForm.get('startDate')?.touched">
       Company Start Date is required!
     </div>
   </div>
-
     <button class="submitButton" type="submit" [disabled]="businessForm.invalid">Submit</button>
   </form>
 
