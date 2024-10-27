@@ -17,12 +17,12 @@ export class FormpageComponent {
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.businessForm = this.fb.group({
-      name: ['', Validators.required],
-      owner: ['', Validators.required],
-      address: ['', Validators.required],
-      description: ['', Validators.required],
-      email: ['', Validators.required],
-      companyType: ['', Validators.required],
+      name: ['', [Validators.required, Validators.maxLength(45)]],
+      owner: ['', [Validators.required, Validators.maxLength(45)]],
+      address: ['', [Validators.required, Validators.maxLength(100)]],
+      description: ['', [Validators.required, Validators.maxLength(150)]],
+      email: ['', [Validators.required, Validators.maxLength(45)]],
+      companyType: ['', [Validators.required, Validators.maxLength(45)]],
       startDate: ['', Validators.required],
     })
   }
