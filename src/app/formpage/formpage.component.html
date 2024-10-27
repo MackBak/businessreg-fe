@@ -1,97 +1,117 @@
+<!-- formpage.component.html -->
+
 <section class="businessForm">
 
-  <h2 class="formHeading">Register Business:</h2>
+  <h1 class="formHeading">Register Business:</h1>
 
   <form [formGroup]="businessForm" (ngSubmit)="onSubmit()" class="applyForm">
+
+    <!-- Company Name -->
     <div class="form-group">
       <label>Company Name</label>
       <input id="companyNameInput" formControlName="name" />
       <div *ngIf="businessForm.get('name')?.errors && businessForm.get('name')?.touched">
-        <div *ngIf="businessForm.get('name')?.hasError('required')">
+        <div class="error" *ngIf="businessForm.get('name')?.hasError('required')">
           Company Name is required!
         </div>
-        <div *ngIf="businessForm.get('name')?.hasError('maxlength')">
+        <div class="error" *ngIf="businessForm.get('name')?.hasError('maxlength')">
           Company Name can only be 45 characters!
         </div>
       </div>
     </div>
 
+    <!-- Owner Name -->
     <div class="form-group">
       <label>Owner Name</label>
       <input id="ownerNameInput" formControlName="owner"/>
       <div *ngIf="businessForm.get('owner')?.errors && businessForm.get('owner')?.touched">
-        <div *ngIf="businessForm.get('owner')?.hasError('required')">
+        <div class="error" *ngIf="businessForm.get('owner')?.hasError('required')">
           Owner Name is required!
         </div>
-        <div *ngIf="businessForm.get('owner')?.hasError('maxlength')">
+        <div class="error" *ngIf="businessForm.get('owner')?.hasError('maxlength')">
           Owner Name can only be 45 characters!
         </div>
       </div>
     </div>
 
+    <!-- Company Address -->
     <div class="form-group">
       <label>Company Address</label>
       <input id="companyAddressInput" formControlName="address" />
       <div *ngIf="businessForm.get('address')?.errors && businessForm.get('address')?.touched">
-        <div *ngIf="businessForm.get('address')?.hasError('required')">
+        <div class="error" *ngIf="businessForm.get('address')?.hasError('required')">
           Company Address is required!
         </div>
-        <div *ngIf="businessForm.get('address')?.hasError('maxlength')">
+        <div class="error" *ngIf="businessForm.get('address')?.hasError('maxlength')">
           Company Address can only be 100 characters!
         </div>
       </div>
     </div>
 
+    <!-- Company Description -->
     <div class="form-group">
       <label>Company Description</label>
       <input id="companyDescriptionInput" formControlName="description" />
       <div *ngIf="businessForm.get('description')?.errors && businessForm.get('description')?.touched">
-        <div *ngIf="businessForm.get('description')?.hasError('required')">
+        <div class="error" *ngIf="businessForm.get('description')?.hasError('required')">
           Company Description is required!
         </div>
-        <div *ngIf="businessForm.get('description')?.hasError('maxlength')">
+        <div class="error" *ngIf="businessForm.get('description')?.hasError('maxlength')">
           Company Description can only be 150 characters!
         </div>
       </div>
     </div>
 
+    <!-- Company Email -->
     <div class="form-group">
       <label>Company Email</label>
       <input id="companyEmailInput" formControlName="email" />
       <div *ngIf="businessForm.get('email')?.errors && businessForm.get('email')?.touched">
-        <div *ngIf="businessForm.get('email')?.hasError('required')">
+        <div class="error" *ngIf="businessForm.get('email')?.hasError('required')">
           Company Email is required!
         </div>
-        <div *ngIf="businessForm.get('email')?.hasError('maxlength')">
+        <div class="error" *ngIf="businessForm.get('email')?.hasError('maxlength')">
           Company Email can only be 45 characters!
+        </div>
+        <div class="error" *ngIf="businessForm.get('email')?.hasError('email')">
+          Use a valid email!
         </div>
       </div>
     </div>
 
+    <!-- Company Type -->
     <div class="form-group">
       <label>Company Type</label>
       <input id="companyTypeInput" formControlName="companyType" />
       <div *ngIf="businessForm.get('companyType')?.errors && businessForm.get('companyType')?.touched">
-        <div *ngIf="businessForm.get('companyType')?.hasError('required')">
+        <div class="error" *ngIf="businessForm.get('companyType')?.hasError('required')">
           Company Type is required!
         </div>
-        <div *ngIf="businessForm.get('companyType')?.hasError('maxlength')">
+        <div class="error" *ngIf="businessForm.get('companyType')?.hasError('maxlength')">
           Company Type can only be 45 characters!
         </div>
       </div>
     </div>
 
+    <!-- Company Start Date -->
     <div class="form-group">
-      <label>Company Start Date</label>
-      <input id="companyStartDateInput" formControlName="startDate" type="date" />
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Company Start Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="startDate" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
       <div *ngIf="businessForm.get('startDate')?.errors && businessForm.get('startDate')?.touched">
-        <div *ngIf="businessForm.get('startDate')?.hasError('required')">
+        <div class="error" *ngIf="businessForm.get('startDate')?.hasError('required')">
           Company Start Date is required!
+        </div>
+        <div class="error" *ngIf="businessForm.get('startDate')?.hasError('futureDate')">
+          Start Date cannot be in the future!
         </div>
       </div>
     </div>
 
-    <button class="submitButton" type="submit" [disabled]="businessForm.invalid">Submit</button>
+    <button mat-raised-button color="primary" class="submitButton" type="submit" [disabled]="businessForm.invalid">Submit</button>
   </form>
 
 </section>
