@@ -3,3 +3,24 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Override Primary Color (Indigo to Cyan) */
+.mat-primary {
+  background-color: #00bcd4 !important; /* Cyan 500 */
+  color: white !important;
+}
+
+/* Override Accent Color (Pink to Orange) */
+.mat-accent {
+  background-color: #ff9800 !important; /* Orange 500 */
+  color: white !important;
+}
+
+/* Override Hover States if Necessary */
+.mat-primary:hover {
+  background-color: #00acc1 !important; /* Cyan 600 */
+}
+
+.mat-accent:hover {
+  background-color: #fb8c00 !important; /* Orange 600 */
+}
