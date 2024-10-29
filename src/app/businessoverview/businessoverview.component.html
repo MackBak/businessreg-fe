@@ -1,1 +1,18 @@
-<p>businessoverview works!</p>
+<!-- businessoverview.component.html -->
+
+<div class="businessSearch">
+  <h1 class="searchHeading">Search for business:</h1>
+  <mat-form-field>
+    <input id="businessSearch" matInput type="search">
+    <textarea matInput placeholder="Name or ID"></textarea>
+  </mat-form-field>
+</div>
+
+<div class="searchbarButtons">
+  <button id="submitButton" mat-raised-button color="primary" class="submitButton" type="submit" [disabled]="false">Submit</button>
+  <button id="clearButton" mat-raised-button color="primary" class="clearButton" type="submit" [disabled]="false">Clear</button>
+</div>
+
+
+<section class="searchResult">
+</section>

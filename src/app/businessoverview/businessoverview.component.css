@@ -1,0 +1,22 @@
+
+.businessSearch {
+  margin-top: 5%;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 525;
+}
+
+.searchbarButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.submitButton {
+  margin-right: 10px;
+}
+
+.clearButton {
+  margin-left: 10px;
+}
