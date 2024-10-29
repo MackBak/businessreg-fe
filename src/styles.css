@@ -4,23 +4,85 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-/* Override Primary Color (Indigo to Cyan) */
-.mat-primary {
-  background-color: #00bcd4 !important; /* Cyan 500 */
-  color: white !important;
+/* styles.css */
+
+
+/* -------------- Light Theme -------------- */
+.light-theme {
+  /* Primary Color: Blue */
+  --mdc-theme-primary: #2196F3; /* Blue 500 */
+
+  /* Secondary Color: Azure */
+  --mdc-theme-secondary: #007FFF; /* Azure */
+
+  /* Background Colors */
+  --mdc-theme-background: #FFFFFF; /* White */
+  --mdc-theme-surface: #FFFFFF;    /* White */
+
+  /* Text Colors */
+  --mdc-theme-on-primary: #FFFFFF;    /* White text on primary */
+  --mdc-theme-on-secondary: #FFFFFF;  /* White text on secondary */
+  --mdc-theme-on-background: #000000; /* Black text on background */
+  --mdc-theme-on-surface: #000000;    /* Black text on surface */
+
+  /* Error Colors */
+  --mdc-theme-error: #B00020;         /* Red 700 */
+  --mdc-theme-on-error: #FFFFFF;      /* White text on error */
 }
 
-/* Override Accent Color (Pink to Orange) */
-.mat-accent {
-  background-color: #ff9800 !important; /* Orange 500 */
-  color: white !important;
+
+/* -------------- Dark Theme -------------- */
+.dark-theme {
+  /* Primary Color: Magenta */
+  --mdc-theme-primary: #FF00FF; /* Magenta */
+
+  /* Secondary Color: Violet */
+  --mdc-theme-secondary: #8A2BE2; /* Violet */
+
+  /* Background Colors */
+  --mdc-theme-background: #303030; /* Dark Gray */
+  --mdc-theme-surface: #424242;    /* Darker Gray */
+
+  /* Text Colors */
+  --mdc-theme-on-primary: #000000;    /* Black text on primary */
+  --mdc-theme-on-secondary: #FFFFFF;  /* White text on secondary */
+  --mdc-theme-on-background: #FFFFFF; /* White text on background */
+  --mdc-theme-on-surface: #FFFFFF;    /* White text on surface */
+
+  /* Error Colors */
+  --mdc-theme-error: #CF6679;         /* Red 300 */
+  --mdc-theme-on-error: #000000;      /* Black text on error */
 }
 
-/* Override Hover States if Necessary */
-.mat-primary:hover {
-  background-color: #00acc1 !important; /* Cyan 600 */
+
+
+/* -------------- Global Styles -------------- */
+
+/* Apply Background and Text Colors Globally */
+body {
+  background-color: var(--mdc-theme-background);
+  color: var(--mdc-theme-on-background);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.mat-accent:hover {
-  background-color: #fb8c00 !important; /* Orange 600 */
+/* Optional: Smooth Transitions for All Elements */
+* {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* -------------- Angular Material Overrides -------------- */
+
+/* Example: Override mat-toolbar to Use Theme Colors */
+.mat-toolbar {
+  background-color: var(--mdc-theme-primary) !important;
+  color: var(--mdc-theme-on-primary) !important;
+}
+
+/* Example: Override mat-button to Use Secondary Color */
+.mat-button {
+  color: var(--mdc-theme-on-primary) !important;
+}
+
+.mat-button.mat-accent {
+  color: var(--mdc-theme-on-secondary) !important;
 }

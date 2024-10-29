@@ -3,12 +3,12 @@
 .navbar {
   display: flex;
   align-items: center;
-  background-color: black;
+  background-color: #FF00FF;
   padding: 10px;
 }
 
 .nav-link {
-  color: white;
+  color: whitesmoke;
   text-decoration: none;
   margin-right: 20px;
   font-weight: bold;

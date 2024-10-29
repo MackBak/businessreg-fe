@@ -1,12 +1,20 @@
 /*!* home.component.css *!*/
 
+body {
+  background-color: #1f1f1f;
+}
+
 .home-container {
-  margin: 5% auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.welcomeStuff {
+  margin-top: 50px;
+  color: #eeeeee;
 }
 
 .goFormButton {
