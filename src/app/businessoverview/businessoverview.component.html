@@ -2,16 +2,29 @@
 
 <div class="businessSearch">
   <h1 class="searchHeading">Search for business:</h1>
-  <mat-form-field>
-    <input id="businessSearch" matInput type="search">
-  </mat-form-field>
 </div>
 
-<div class="searchbarButtons">
-  <button id="clearButton" mat-raised-button color="primary" class="clearButton" type="submit" [disabled]="false">Clear</button>
-  <button id="submitButton" mat-raised-button color="primary" class="submitButton" type="submit" [disabled]="false">Submit</button>
+<div>
+  <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="submitForm">
+
+    <mat-form-field>
+      <input id="businessSearch" matInput type="search" formControlName="businessSearch">
+<!--      <div *ngIf="searchForm.get('businessSearch')?.hasError('required')">-->
+<!--      Fill in company ID or exact company name!-->
+<!--      </div>-->
+    </mat-form-field>
+
+    <div class="searchbarButtons">
+      <button id="clearButton" mat-raised-button color="primary" class="clearButton" type="submit" [disabled]="false">
+        Clear
+      </button>
+      <button id="submitButton" mat-raised-button color="primary" class="submitButton" type="submit" [disabled]="false">
+        Submit
+      </button>
+    </div>
+  </form>
 </div>
 
 
-<section class="searchResult">
-</section>
+  <section class="searchResult">
+  </section>
