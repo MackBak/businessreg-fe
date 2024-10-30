@@ -22,34 +22,36 @@
   </form>
 </div>
 
-<section class="searchResult" *ngIf="searchResult">
-  <h2>Business Details:</h2>
-  <div class="resultRow">
-    <span class="resultLabel">Name:</span>
-    <span class="resultValue">{{ searchResult.name }}</span>
-  </div>
-  <div class="resultRow">
-    <span class="resultLabel">Owner:</span>
-    <span class="resultValue">{{ searchResult.owner }}</span>
-  </div>
-  <div class="resultRow">
-    <span class="resultLabel">Address:</span>
-    <span class="resultValue">{{ searchResult.address }}</span>
-  </div>
-  <div class="resultRow">
-    <span class="resultLabel">Email:</span>
-    <span class="resultValue">{{ searchResult.email }}</span>
-  </div>
-  <div class="resultRow">
-    <span class="resultLabel">Company Type:</span>
-    <span class="resultValue">{{ searchResult.companyType }}</span>
-  </div>
-  <div class="resultRow">
-    <span class="resultLabel">Description:</span>
-    <span class="resultValue">{{ searchResult.description }}</span>
-  </div>
-  <div class="resultRow">
-    <span class="resultLabel">Date Founded:</span>
-    <span class="resultValue">{{ searchResult.startDate }}</span>
-  </div>
-</section>
+<div class="resultWrapper">
+  <section class="searchResult" *ngIf="searchResult">
+    <h2 id="businessDetailsHeader">Business Details:</h2>
+    <div class="resultRow">
+      <span class="resultLabel">Name:</span>
+      <span class="resultValue">{{ searchResult.name }}</span>
+    </div>
+    <div class="resultRow">
+      <span class="resultLabel">Owner:</span>
+      <span class="resultValue">{{ searchResult.owner }}</span>
+    </div>
+    <div class="resultRow">
+      <span class="resultLabel">Address:</span>
+      <span class="resultValue">{{ searchResult.address }}</span>
+    </div>
+    <div class="resultRow">
+      <span class="resultLabel">Email:</span>
+      <span class="resultValue">{{ searchResult.email }}</span>
+    </div>
+    <div class="resultRow">
+      <span class="resultLabel">Company Type:</span>
+      <span class="resultValue">{{ searchResult.companyType }}</span>
+    </div>
+    <div class="resultRow">
+      <span class="resultLabel">Description:</span>
+      <span class="resultValue">{{ searchResult.description }}</span>
+    </div>
+    <div class="resultRow">
+      <span class="resultLabel">Date Founded:</span>
+      <span class="resultValue">{{ searchResult.startDate }}</span>
+    </div>
+  </section>
+</div>

@@ -32,3 +32,41 @@ h1 {
   margin-right: 10px;
 }
 
+.resultWrapper {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchResult {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 40%; /* Ensures it stays responsive */
+  text-align: left; /* Keeps content aligned left for readability */
+  box-shadow: 0 3px 6px 3px rgba(0, 0, 0, 0.2);
+}
+
+.resultRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.resultLabel {
+  font-weight: 560;
+  flex: 1;
+  text-align: left;
+}
+
+.resultValue {
+  flex: 2;
+  text-align: right;
+}
+
+#businessDetailsHeader {
+  text-align: center;
+  font-weight: 580;
+}
