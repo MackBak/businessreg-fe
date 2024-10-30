@@ -5,6 +5,7 @@ import {MatButton, MatIconButton} from '@angular/material/button';
 import {MatIcon} from '@angular/material/icon';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {HttpClient, HttpParams} from '@angular/common/http';
+import {NgIf} from '@angular/common';
 
 
 @Component({
@@ -16,7 +17,8 @@ import {HttpClient, HttpParams} from '@angular/common/http';
     MatIconButton,
     MatIcon,
     MatButton,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgIf
   ],
   templateUrl: './businessoverview.component.html',
   styleUrl: './businessoverview.component.css'
@@ -25,6 +27,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 
 export class BusinessoverviewComponent {
   searchForm: FormGroup;
+  searchResult: any | null = null;
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.searchForm = this.fb.group({
@@ -42,9 +45,11 @@ export class BusinessoverviewComponent {
       this.http.get('http://localhost:8080/api/company/get', {params}).subscribe({
           next: (response) => {
             console.log('Submitting search', response);
+            this.searchResult = response;
           },
           error: (error) => {
             console.error('Error in form', error);
+            this.searchResult = null;
           },
           complete: () => {
             console.log('Get request completed from api/company')
